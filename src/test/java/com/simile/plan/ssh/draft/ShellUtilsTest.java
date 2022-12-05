@@ -1,6 +1,4 @@
-package com.simile.plan.ssh.test;
-
-import static org.junit.Assert.*;
+package com.simile.plan.ssh.draft;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -26,7 +24,9 @@ public class ShellUtilsTest {
     public static void main(String[] args) throws IOException {
         Scanner s = new Scanner(System.in);
 
-        ProcessBuilder pb = new ProcessBuilder("/bin/sh","-c","ssh work@192.168.1.147");
+//        ProcessBuilder pb = new ProcessBuilder("/bin/sh","-c","ssh work@192.168.1.147");
+//        ProcessBuilder pb = new ProcessBuilder("/bin/sh","-c","ssh test@192.168.1.101");
+        ProcessBuilder pb = new ProcessBuilder("/bin/zsh", "-c", "node --version");
         pb.redirectErrorStream(true);
         Process p = pb.start();
         OutputStream os = p.getOutputStream();
@@ -36,19 +36,19 @@ public class ShellUtilsTest {
         PrintWriter pw = new PrintWriter(os);
         BufferedReader br = new BufferedReader(new InputStreamReader(in));
         String out;
-        while (true) {
-            System.out.print(">");
-            String n = s.next();
-            pw.println(n);
-            pw.flush();
-            while((out = br.readLine())!=null){
-                System.out.println(out);
-            }
-            if ("exit".equals(n)) {
-                br.close();
-                os.close();
-                break;
-            }
+//        while (true) {
+//            System.out.print(">");
+//            String n = s.next();
+//            pw.println(n);
+//            pw.flush();
+        while ((out = br.readLine()) != null) {
+            System.out.println(out);
         }
+//            if ("exit".equals(n)) {
+//                br.close();
+//                os.close();
+//                break;
+//            }
+//        }
     }
 }

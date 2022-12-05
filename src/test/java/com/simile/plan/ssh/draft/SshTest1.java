@@ -1,12 +1,10 @@
-package com.simile.plan.ssh.test;
+package com.simile.plan.ssh.draft;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
 import java.io.PrintStream;
-import java.io.PrintWriter;
 import java.util.Scanner;
 
 import com.jcraft.jsch.ChannelExec;
@@ -15,16 +13,17 @@ import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.Session;
 
 /**
+ * jsch
  * @author yitao
  * @since 2020-12-10
  */
 public class SshTest1 {
 
     public static void main(String[] args) throws IOException, JSchException {
-        String host = "192.168.1.147";
+        String host = "192.168.1.101";
         int port = 22;
-        String user = "work";
-        String password = "xingtu@2020";
+        String user = "test";
+        String password = "haizhi@123";
         exeCommand(host, port, user, password);
     }
 

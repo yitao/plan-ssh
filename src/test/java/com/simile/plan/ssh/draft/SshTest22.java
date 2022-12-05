@@ -1,12 +1,8 @@
-package com.simile.plan.ssh.test;
+package com.simile.plan.ssh.draft;
 
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.io.PrintStream;
 import java.util.Scanner;
 
 import ch.ethz.ssh2.Connection;
@@ -20,10 +16,10 @@ import org.apache.commons.io.IOUtils;
 public class SshTest22 {
 
     public static void main(String[] args) throws IOException {
-        String host = "192.168.1.147";
+        String host = "192.168.1.101";
         int port = 22;
-        String user = "work";
-        String password = "xingtu@2020";
+        String user = "test";
+        String password = "haizhi@123";
         exeCommand(host, port, user, password);
     }
 
